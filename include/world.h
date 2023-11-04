@@ -13,7 +13,6 @@ typedef struct world_s
     object_t *map;
     camera_t *camera;
     player_t *player;
-    sfClock *clock;
 } world_t;
 
 world_t *create_world(void);

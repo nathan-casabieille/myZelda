@@ -9,27 +9,50 @@ find_package(SFML 2.5 COMPONENTS system window graphics audio network REQUIRED)
 include_directories(${CMAKE_SOURCE_DIR}/cmake/CSFML/include)
 link_directories(${CMAKE_SOURCE_DIR}/cmake/CSFML/lib/msvc)
 
-# add include directories
 include_directories(include)
 
-# add the source directories
-set(SRCS
-    src/main.c
+set(OBJECT_SRCS
     src/object/create_object.c
     src/object/destroy_object.c
     src/object/draw_object.c
-    src/object/animate_object.c
+)
+
+set(CAMERA_SRCS
     src/camera/apply_camera.c
     src/camera/create_camera.c
     src/camera/destroy_camera.c
     src/camera/update_camera.c
+)
+
+set(WORLD_SRCS
     src/world/create_world.c
     src/world/destroy_world.c
     src/world/draw_world.c
+)
+
+set(PLAYER_SRCS
     src/player/create_player.c
     src/player/destroy_player.c
+    src/player/animate_player.c
+    src/player/move_player.c
+    src/player/change_direction.c
 )
-# add the executable
+
+set(ANIMATION_SRCS
+    src/animation/create_animation.c
+    src/animation/destroy_animation.c
+)
+
+set(SRCS
+    src/main.c
+    ${OBJECT_SRCS}
+    ${CAMERA_SRCS}
+    ${WORLD_SRCS}
+    ${PLAYER_SRCS}
+    ${ANIMATION_SRCS}
+    ${KEYBOARD_SRCS}
+)
+
 add_executable(Zelda ${SRCS})
 
 target_link_libraries(Zelda sfml-system sfml-window sfml-graphics sfml-audio sfml-network)

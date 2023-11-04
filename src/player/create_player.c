@@ -8,6 +8,9 @@ player_t *create_player(sfVector2f position)
     if (!player)
         return NULL;
 
+    player->moving = sfFalse;
+    player->direction = PLAYER_DIRECTION_DOWN;
+
     player->object = create_object(
         PLAYER_SPRITE_PATH,
         position,
@@ -18,6 +21,8 @@ player_t *create_player(sfVector2f position)
         return NULL;
     
     player->position = position;
+
+    player->animation_clock = sfClock_create();
 
     return player;   
 }

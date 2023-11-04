@@ -4,7 +4,7 @@ void init_window(world_t *world)
 {
     sfVideoMode mode = {WINDOW_WIDTH, WINDOW_HEIGHT, 32};
     world->window = sfRenderWindow_create(mode, WINDOW_NAME, sfResize | sfClose, NULL);
-    sfRenderWindow_setFramerateLimit(world->window, 60);
+    sfRenderWindow_setFramerateLimit(world->window, 30);
 }
 
 sfVector2f calculate_spawn_tile_pos(void)
@@ -40,8 +40,6 @@ world_t *create_world(void)
     );
 
     world->player = create_player(tile_spawn_center);
-
-    world->clock = sfClock_create();
 
     return world;
 }
