@@ -22,6 +22,8 @@ set(SRCS
     src/camera/create_camera.c
     src/camera/destroy_camera.c
     src/camera/update_camera.c
+    src/world/create_world.c
+    src/world/destroy_world.c
 )
 # add the executable
 add_executable(Zelda ${SRCS})

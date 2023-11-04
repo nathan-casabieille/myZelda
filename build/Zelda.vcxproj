@@ -329,6 +329,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\linux\Documents\GitHub\Zelda\src\camera\create_camera.c" />
     <ClCompile Include="C:\Users\linux\Documents\GitHub\Zelda\src\camera\destroy_camera.c" />
     <ClCompile Include="C:\Users\linux\Documents\GitHub\Zelda\src\camera\update_camera.c" />
+    <ClCompile Include="C:\Users\linux\Documents\GitHub\Zelda\src\world\create_world.c" />
+    <ClCompile Include="C:\Users\linux\Documents\GitHub\Zelda\src\world\destroy_world.c" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\linux\Documents\GitHub\Zelda\build\ZERO_CHECK.vcxproj">

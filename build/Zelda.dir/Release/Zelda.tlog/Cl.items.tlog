@@ -6,3 +6,5 @@ C:\Users\linux\Documents\GitHub\Zelda\src\camera\apply_camera.c;C:\Users\linux\D
 C:\Users\linux\Documents\GitHub\Zelda\src\camera\create_camera.c;C:\Users\linux\Documents\GitHub\Zelda\build\Zelda.dir\Release\create_camera.obj
 C:\Users\linux\Documents\GitHub\Zelda\src\camera\destroy_camera.c;C:\Users\linux\Documents\GitHub\Zelda\build\Zelda.dir\Release\destroy_camera.obj
 C:\Users\linux\Documents\GitHub\Zelda\src\camera\update_camera.c;C:\Users\linux\Documents\GitHub\Zelda\build\Zelda.dir\Release\update_camera.obj
+C:\Users\linux\Documents\GitHub\Zelda\src\world\create_world.c;C:\Users\linux\Documents\GitHub\Zelda\build\Zelda.dir\Release\create_world.obj
+C:\Users\linux\Documents\GitHub\Zelda\src\world\destroy_world.c;C:\Users\linux\Documents\GitHub\Zelda\build\Zelda.dir\Release\destroy_world.obj

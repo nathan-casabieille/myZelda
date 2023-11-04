@@ -25,6 +25,12 @@
     <ClCompile Include="C:\Users\linux\Documents\GitHub\Zelda\src\camera\update_camera.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\linux\Documents\GitHub\Zelda\src\world\create_world.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\linux\Documents\GitHub\Zelda\src\world\destroy_world.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\linux\Documents\GitHub\Zelda\CMakeLists.txt" />
