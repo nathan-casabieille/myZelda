@@ -1,0 +1,3 @@
+C:/Users/linux/Documents/GitHub/Zelda/build/CMakeFiles/Zelda.dir
+C:/Users/linux/Documents/GitHub/Zelda/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/linux/Documents/GitHub/Zelda/build/CMakeFiles/ZERO_CHECK.dir

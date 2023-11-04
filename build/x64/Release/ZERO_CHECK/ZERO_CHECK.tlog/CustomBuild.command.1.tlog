@@ -1,0 +1,10 @@
+^C:\USERS\LINUX\DOCUMENTS\GITHUB\ZELDA\BUILD\CMAKEFILES\F5D2DCC9638CCB32D6ED922C13D171DD\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/linux/Documents/GitHub/Zelda -BC:/Users/linux/Documents/GitHub/Zelda/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/linux/Documents/GitHub/Zelda/build/Zelda.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
