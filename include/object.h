@@ -13,8 +13,9 @@ typedef struct object_s
     sfIntRect rect;
 } object_t;
 
-object_t *create_object(char *path, sfVector2f pos, sfIntRect rect);
+object_t *create_object(const char *path, sfVector2f pos, sfIntRect rect);
 void destroy_object(object_t *object);
 void draw_object(sfRenderWindow *window, object_t *object);
+void animate_object(object_t *object, int frame_count, int animation_speed, int offset_x, sfClock *clock);
 
 #endif // __OBJECT_H__

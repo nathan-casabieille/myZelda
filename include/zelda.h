@@ -17,5 +17,9 @@
 #define SPAWN_TILE_Y 7
 
 #define MAP_FILE_PATH "assets/map.png"
+#define PLAYER_SPRITE_PATH "assets/player.png"
+
+#define PLAYER_WIDTH 16
+#define PLAYER_HEIGHT 16
 
 #endif // __ZELDA_H__

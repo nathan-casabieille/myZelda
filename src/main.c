@@ -23,9 +23,7 @@ int main(int argc, char **argv)
 
         apply_camera(world->window, world->camera);
 
-        draw_object(world->window, world->map);
-
-        sfRenderWindow_display(world->window);
+        draw_world(world);
     }
 
     destroy_world(world);

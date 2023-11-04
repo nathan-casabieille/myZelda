@@ -18,12 +18,16 @@ set(SRCS
     src/object/create_object.c
     src/object/destroy_object.c
     src/object/draw_object.c
+    src/object/animate_object.c
     src/camera/apply_camera.c
     src/camera/create_camera.c
     src/camera/destroy_camera.c
     src/camera/update_camera.c
     src/world/create_world.c
     src/world/destroy_world.c
+    src/world/draw_world.c
+    src/player/create_player.c
+    src/player/destroy_player.c
 )
 # add the executable
 add_executable(Zelda ${SRCS})
