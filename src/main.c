@@ -10,58 +10,58 @@ int main(int argc, char **argv)
 
     sfVector2f movementOffset = {0, 0};
 
+
+    sfBool movingInX = sfFalse;
+    sfBool movingInY = sfFalse;
+
     if (!world)
         return EXIT_FAILURE;
 
+    const float moveSpeed = 2.0f;
+    sfBool keyLeft = sfFalse, keyRight = sfFalse, keyUp = sfFalse, keyDown = sfFalse;
+
     while (sfRenderWindow_isOpen(world->window)) {
-                while (sfRenderWindow_pollEvent(world->window, &event)) {
+        while (sfRenderWindow_pollEvent(world->window, &event)) {
             if (event.type == sfEvtClosed) {
                 sfRenderWindow_close(world->window);
-            } else if (event.type == sfEvtKeyPressed) {
-                switch (event.key.code) {
-                    case sfKeyLeft:
-                        movementOffset.x = -2;
-                        world->player->moving = sfTrue;
-                        change_direction(world->player, PLAYER_DIRECTION_LEFT);
-                        break;
-                    case sfKeyRight:
-                        movementOffset.x = 2;
-                        world->player->moving = sfTrue;
-                        change_direction(world->player, PLAYER_DIRECTION_RIGHT);
-                        break;
-                    case sfKeyUp:
-                        movementOffset.y = -2;
-                        world->player->moving = sfTrue;
-                        change_direction(world->player, PLAYER_DIRECTION_UP);
-                        break;
-                    case sfKeyDown:
-                        movementOffset.y = 2;
-                        world->player->moving = sfTrue;
-                        change_direction(world->player, PLAYER_DIRECTION_DOWN);
-                        break;
-                    default:
-                        break;
-                }
-            } else if (event.type == sfEvtKeyReleased) {
-                switch (event.key.code) {
-                    case sfKeyLeft:
-                    case sfKeyRight:
-                        movementOffset.x = 0;
-                        break;
-                    case sfKeyUp:
-                    case sfKeyDown:
-                        movementOffset.y = 0;
-                        break;
-                    default:
-                        break;
-                }
+            }
+            if (event.type == sfEvtKeyPressed || event.type == sfEvtKeyReleased) {
+                sfBool keyState = (event.type == sfEvtKeyPressed) ? sfTrue : sfFalse;
 
-                if (movementOffset.x == 0 && movementOffset.y == 0) {
-                    world->player->moving = sfFalse;
+                switch (event.key.code) {
+                    case sfKeyLeft:
+                        keyLeft = keyState;
+                        break;
+                    case sfKeyRight:
+                        keyRight = keyState;
+                        break;
+                    case sfKeyUp:
+                        keyUp = keyState;
+                        break;
+                    case sfKeyDown:
+                        keyDown = keyState;
+                        break;
                 }
             }
         }
 
+        movingInX = keyLeft || keyRight;
+        movingInY = keyUp || keyDown;
+        movementOffset.x = 0;
+        movementOffset.y = 0;
+
+        if (movingInX && !movingInY) {
+            movementOffset.x = keyLeft ? -moveSpeed : (keyRight ? moveSpeed : 0);
+            world->player->moving = sfTrue;
+            change_direction(world->player, keyLeft ? PLAYER_DIRECTION_LEFT : PLAYER_DIRECTION_RIGHT);
+        }
+        else if (movingInY && !movingInX) {
+            movementOffset.y = keyUp ? -moveSpeed : (keyDown ? moveSpeed : 0);
+            world->player->moving = sfTrue;
+            change_direction(world->player, keyUp ? PLAYER_DIRECTION_UP : PLAYER_DIRECTION_DOWN);
+        }
+
+        // Now apply the movementOffset to move the player
         if (world->player->moving) {
             move_player(world->player, movementOffset);
         }
@@ -72,6 +72,7 @@ int main(int argc, char **argv)
 
         draw_world(world);
     }
+
 
     destroy_world(world);
 
