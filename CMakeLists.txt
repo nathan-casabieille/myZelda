@@ -14,7 +14,7 @@ include_directories(include)
 set(OBJECT_SRCS
     src/object/create_object.c
     src/object/destroy_object.c
-    src/object/draw_object.c
+    src/object/render_object.c
 )
 
 set(CAMERA_SRCS
@@ -27,7 +27,7 @@ set(CAMERA_SRCS
 set(WORLD_SRCS
     src/world/create_world.c
     src/world/destroy_world.c
-    src/world/draw_world.c
+    src/world/render_world.c
 )
 
 set(PLAYER_SRCS
@@ -38,9 +38,10 @@ set(PLAYER_SRCS
     src/player/change_direction.c
 )
 
-set(ANIMATION_SRCS
-    src/animation/create_animation.c
-    src/animation/destroy_animation.c
+set(PLAYER_CONTROLLER_SRCS
+    src/player_controller/create_player_controller.c
+    src/player_controller/handle_events.c
+    src/player_controller/update_player_controller.c
 )
 
 set(SRCS
@@ -49,8 +50,7 @@ set(SRCS
     ${CAMERA_SRCS}
     ${WORLD_SRCS}
     ${PLAYER_SRCS}
-    ${ANIMATION_SRCS}
-    ${KEYBOARD_SRCS}
+    ${PLAYER_CONTROLLER_SRCS}
 )
 
 add_executable(Zelda ${SRCS})

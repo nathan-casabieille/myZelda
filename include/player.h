@@ -2,9 +2,9 @@
 #define __PLAYER_H_
 
 #include "object.h"
-#include "animation.h"
 
 #define NBR_PLAYER_DIRECTIONS 4
+#define PLAYER_WALKING_SPEED 2.0f
 #define PLAYER_ANIMATION_SPEED 150
 #define PLAYER_ANIMATION_FRAME_COUNT 2
 

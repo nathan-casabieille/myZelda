@@ -16,7 +16,7 @@ typedef struct world_s
 } world_t;
 
 world_t *create_world(void);
-void draw_world(world_t *world);
+void render_world(world_t *world);
 void destroy_world(world_t *world);
 
 #endif //__WORLD_H_
