@@ -24,11 +24,13 @@ typedef struct player_s
     sfClock* animation_clock;
     int current_frame;
     sfBool moving;
+    sfBool can_move;
 } player_t;
 
 player_t *create_player(sfVector2f position);
 void destroy_player(player_t *player);
 void move_player(player_t *player, sfVector2f offset);
+void set_player_position(player_t *player, sfVector2f position);
 
 void animate_player(player_t *player);
 

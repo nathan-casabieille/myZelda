@@ -5,7 +5,7 @@ void animate_player(player_t* player) {
     sfIntRect animationRects[NBR_PLAYER_DIRECTIONS][PLAYER_ANIMATION_FRAME_COUNT] = {
         [PLAYER_DIRECTION_UP]    = { {69, 11, PLAYER_WIDTH, PLAYER_HEIGHT}, {86, 11, PLAYER_WIDTH, PLAYER_HEIGHT} },
         [PLAYER_DIRECTION_DOWN]  = { {1, 11, PLAYER_WIDTH, PLAYER_HEIGHT}, {18, 11, PLAYER_WIDTH, PLAYER_HEIGHT} },
-        [PLAYER_DIRECTION_LEFT]  = { {35, 11, PLAYER_WIDTH, PLAYER_HEIGHT}, {52, 11, PLAYER_WIDTH, PLAYER_HEIGHT} },
+        [PLAYER_DIRECTION_LEFT]  = { {103, 11, PLAYER_WIDTH, PLAYER_HEIGHT}, {120, 11, PLAYER_WIDTH, PLAYER_HEIGHT} },
         [PLAYER_DIRECTION_RIGHT] = { {35, 11, PLAYER_WIDTH, PLAYER_HEIGHT}, {52, 11, PLAYER_WIDTH, PLAYER_HEIGHT} }
     };
     
@@ -20,13 +20,6 @@ void animate_player(player_t* player) {
     }
 
     player->object->rect = animationRects[player->direction][player->current_frame];
-
-    if (player->direction == PLAYER_DIRECTION_LEFT) {
-        sfSprite_setScale(player->object->sprite, (sfVector2f){-1.0f, 1.0f});
-    } else {
-        sfSprite_setScale(player->object->sprite, (sfVector2f){1.0f, 1.0f});
-    }
-
 
     sfSprite_setTextureRect(player->object->sprite, player->object->rect);
 }

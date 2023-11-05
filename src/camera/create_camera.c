@@ -16,5 +16,10 @@ camera_t* create_camera(float zoom_level, sfVector2f target_position, sfVector2f
     sfView_setSize(camera->view, size);
     sfView_setCenter(camera->view, target_position);
 
+    camera->is_scrolling = sfFalse;
+    camera->start_position = target_position;
+    camera->scroll_time = 0.0f;
+    camera->current_scroll = 0.0f;
+
     return camera;
 }

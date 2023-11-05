@@ -9,6 +9,11 @@ typedef struct camera_s
     sfVector2f size;
     sfVector2f target_position;
     float zoom_level;
+
+    sfBool is_scrolling;
+    sfVector2f start_position;
+    float scroll_time;
+    float current_scroll;
 } camera_t;
 
 void apply_camera(sfRenderWindow* window, camera_t* camera);

@@ -13,10 +13,14 @@ typedef struct world_s
     object_t *map;
     camera_t *camera;
     player_t *player;
+    sfClock* clock;
 } world_t;
 
 world_t *create_world(void);
 void render_world(world_t *world);
 void destroy_world(world_t *world);
+void update_world(world_t *world, float delta_time);
+
+void update_camera_for_room_scroll(world_t *world, float delta_time);
 
 #endif //__WORLD_H_

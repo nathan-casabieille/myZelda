@@ -41,5 +41,7 @@ world_t *create_world(void)
 
     world->player = create_player(tile_spawn_center);
 
+    world->clock = sfClock_create();
+
     return world;
 }

@@ -9,6 +9,7 @@ player_t *create_player(sfVector2f position)
         return NULL;
 
     player->moving = sfFalse;
+    player->can_move = sfTrue;
     player->direction = PLAYER_DIRECTION_DOWN;
 
     player->object = create_object(
