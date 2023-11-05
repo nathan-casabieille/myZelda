@@ -2,6 +2,7 @@
 #define __PLAYER_H_
 
 #include "object.h"
+#include "camera.h"
 
 #define NBR_PLAYER_DIRECTIONS 4
 #define PLAYER_WALKING_SPEED 2.0f
@@ -32,7 +33,7 @@ void destroy_player(player_t *player);
 void move_player(player_t *player, sfVector2f offset);
 void set_player_position(player_t *player, sfVector2f position);
 
-void animate_player(player_t *player);
+void animate_player(player_t *player, camera_t *camera);
 
 void change_direction(player_t *player, player_direction_t direction);
 
