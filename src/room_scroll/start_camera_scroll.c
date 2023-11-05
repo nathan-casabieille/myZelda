@@ -3,7 +3,7 @@
 void start_camera_scroll(camera_t *camera, player_t *player, sfVector2f new_target_position, float time)
 {
     if (camera->is_scrolling) {
-        return; // La caméra est déjà en train de défiler
+        return;
     }
 
     camera->is_scrolling = sfTrue;

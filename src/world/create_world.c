@@ -10,8 +10,8 @@ void init_window(world_t *world)
 sfVector2f calculate_spawn_tile_pos(void)
 {
     sfVector2f tile_center = {
-        (SPAWN_TILE_X * (TILE_WIDTH + 1)) + ((TILE_WIDTH + 1) / 2),
-        (SPAWN_TILE_Y * (TILE_HEIGHT + 1)) + ((TILE_HEIGHT + 1) / 2)
+        (SPAWN_TILE_X * TILE_WIDTH) + (TILE_WIDTH / 2),
+        (SPAWN_TILE_Y * TILE_HEIGHT) + (TILE_HEIGHT / 2)
     };
     return tile_center;
 }
@@ -30,7 +30,7 @@ world_t *create_world(void)
     world->map = create_object(
         MAP_FILE_PATH,
         (sfVector2f){0, 0},
-        (sfIntRect){1, 1, MAP_WIDTH, MAP_HEIGHT}
+        (sfIntRect){0, 0, MAP_WIDTH, MAP_HEIGHT}
     );
 
     world->camera = create_camera(

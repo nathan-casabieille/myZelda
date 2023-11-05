@@ -55,6 +55,7 @@ set(ROOM_SCROLL_SRCS
     src/room_scroll/player_reached_edge_of_screen.c
     src/room_scroll/start_camera_scroll.c
     src/room_scroll/update_camera_for_room_scroll.c
+    src/room_scroll/get_adjusted_bounds.c
 )
 
 set(SRCS

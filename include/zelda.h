@@ -7,8 +7,8 @@
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 600
 
-#define MAP_WIDTH 4113
-#define MAP_HEIGHT 1598
+#define MAP_WIDTH 3584
+#define MAP_HEIGHT 1584
 
 #define TILE_WIDTH 256
 #define TILE_HEIGHT 176
