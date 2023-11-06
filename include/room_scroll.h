@@ -2,7 +2,6 @@
 #define __ROOM_SCROLL_H_
 
 #include <SFML/Graphics.h>
-#include <math.h>
 
 #include "world.h"
 

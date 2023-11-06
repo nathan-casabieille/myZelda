@@ -2,17 +2,12 @@
 
 sfBool camera_reached_new_room(camera_t *camera)
 {
-    sfVector2f current_position = sfView_getCenter(camera->view);
+    sfVector2f current_position = camera->target_position;
+    sfVector2f end_position = camera->end_position;
 
-    const float epsilon = 0.01f;
-    
-    sfVector2f difference;
-    difference.x = fabsf(camera->target_position.x - current_position.x);
-    difference.y = fabsf(camera->target_position.y - current_position.y);
-
-    if (difference.x <= epsilon && difference.y <= epsilon) {
+    if (current_position.x == end_position.x
+        && current_position.y == end_position.y) {
         return sfTrue;
     }
-
     return sfFalse;
 }

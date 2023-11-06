@@ -8,6 +8,10 @@ void update_player_controller(player_controller_t *controller) {
     sfBool movingInX = controller->keyLeft || controller->keyRight;
     sfBool movingInY = controller->keyUp || controller->keyDown;
 
+    if (controller->player->can_move == sfFalse) {
+        return;
+    }
+
     if (movingInX && !movingInY) {
         movementOffset.x = controller->keyLeft ? -controller->moveSpeed : controller->moveSpeed;
         controller->player->moving = sfTrue;

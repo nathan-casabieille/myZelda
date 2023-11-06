@@ -22,4 +22,6 @@
 #define PLAYER_WIDTH 16
 #define PLAYER_HEIGHT 16
 
+#define ROOM_SCROLL_SPEED 100.0f
+
 #endif // __ZELDA_H__
