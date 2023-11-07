@@ -10,8 +10,8 @@
 #define MAP_WIDTH 4096
 #define MAP_HEIGHT 1598
 
-#define TILE_WIDTH 256
-#define TILE_HEIGHT 176
+#define ROOM_WIDTH 256
+#define ROOM_HEIGHT 176
 
 #define SPAWN_TILE_X 7
 #define SPAWN_TILE_Y 7
@@ -22,6 +22,8 @@
 #define PLAYER_WIDTH 16
 #define PLAYER_HEIGHT 16
 
+#define SCROLL_MARGIN 1
 #define ROOM_SCROLL_SPEED 100.0f
+#define PLAYER_BORDER_OFFSET 5
 
 #endif // __ZELDA_H__

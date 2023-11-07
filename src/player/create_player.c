@@ -20,8 +20,6 @@ player_t *create_player(sfVector2f position)
 
     if (!player->object)
         return NULL;
-    
-    player->position = position;
 
     player->animation_clock = sfClock_create();
 

@@ -1,6 +1,6 @@
 #include "room_scroll.h"
 
-void start_camera_scroll(camera_t *camera, player_t *player, sfVector2f end_position, float time)
+void start_camera_scroll(camera_t *camera, sfVector2f end_position, float time)
 {
     camera->is_scrolling = sfTrue;
     camera->start_position = camera->target_position;

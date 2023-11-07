@@ -15,6 +15,8 @@ set(OBJECT_SRCS
     src/object/create_object.c
     src/object/destroy_object.c
     src/object/render_object.c
+    src/object/move_object.c
+    src/object/place_object.c
 )
 
 set(CAMERA_SRCS
@@ -35,9 +37,7 @@ set(PLAYER_SRCS
     src/player/create_player.c
     src/player/destroy_player.c
     src/player/animate_player.c
-    src/player/move_player.c
     src/player/change_direction.c
-    src/player/set_player_position.c
 )
 
 set(PLAYER_CONTROLLER_SRCS
@@ -50,11 +50,17 @@ set(ROOM_SCROLL_SRCS
     src/room_scroll/calculate_new_camera_position.c
     src/room_scroll/camera_reached_new_room.c
     src/room_scroll/continue_camera_scroll.c
-    src/room_scroll/ensure_player_within_camera_bounds.c
     src/room_scroll/get_view_bounds.c
+    src/room_scroll/move_player_with_camera.c
     src/room_scroll/player_reached_edge_of_screen.c
+    src/room_scroll/position_player_after_scroll.c
     src/room_scroll/start_camera_scroll.c
     src/room_scroll/update_camera_for_room_scroll.c
+)
+
+set(HELPERS_SRCS
+    src/helpers/normalize_vector.c
+    src/helpers/vector_length.c
 )
 
 set(SRCS
@@ -65,6 +71,7 @@ set(SRCS
     ${PLAYER_SRCS}
     ${PLAYER_CONTROLLER_SRCS}
     ${ROOM_SCROLL_SRCS}
+    ${HELPERS_SRCS}
 )
 
 add_executable(Zelda ${SRCS})

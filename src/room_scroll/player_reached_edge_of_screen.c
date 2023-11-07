@@ -1,17 +1,12 @@
 #include "room_scroll.h"
 
-sfBool player_reached_edge_of_screen(const player_t *player, const camera_t *camera)
+sfBool player_reached_edge_of_screen(player_t *player, camera_t *camera)
 {
-    sfFloatRect adjusted_bounds = get_view_bounds(camera->view);
+    sfFloatRect view_bounds = get_view_bounds(camera->view);
+    sfVector2f player_position = player->object->pos;
 
-    sfVector2f player_position = player->position;
-
-    if (player_position.x <= adjusted_bounds.left || 
-        player_position.x + PLAYER_WIDTH >= adjusted_bounds.left + adjusted_bounds.width ||
-        player_position.y <= adjusted_bounds.top ||
-        player_position.y + PLAYER_HEIGHT >= adjusted_bounds.top + adjusted_bounds.height) {
-            return sfTrue;
-    }
-
-    return sfFalse;
+    return player_position.x <= view_bounds.left + SCROLL_MARGIN ||
+           player_position.x + PLAYER_WIDTH >= view_bounds.left + view_bounds.width - SCROLL_MARGIN ||
+           player_position.y <= view_bounds.top + SCROLL_MARGIN ||
+           player_position.y + PLAYER_HEIGHT >= view_bounds.top + view_bounds.height - SCROLL_MARGIN;
 }

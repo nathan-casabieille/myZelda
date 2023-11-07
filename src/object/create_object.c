@@ -24,6 +24,7 @@ object_t *create_object(const char *path, sfVector2f pos, sfIntRect rect)
         return NULL;
     }
 
+    object->pos = pos;
     object->rect = rect;
 
     sfSprite_setTexture(object->sprite, object->texture, sfTrue);

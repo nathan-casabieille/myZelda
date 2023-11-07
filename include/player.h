@@ -20,18 +20,18 @@ typedef enum player_direction_s
 typedef struct player_s
 {
     object_t *object;
-    sfVector2f position;
-    player_direction_t direction;
-    sfClock* animation_clock;
+
     int current_frame;
+    sfClock* animation_clock;
+
+    player_direction_t direction;
+
     sfBool moving;
     sfBool can_move;
 } player_t;
 
 player_t *create_player(sfVector2f position);
 void destroy_player(player_t *player);
-void move_player(player_t *player, sfVector2f offset);
-void set_player_position(player_t *player, sfVector2f position);
 
 void animate_player(player_t *player, camera_t *camera);
 
