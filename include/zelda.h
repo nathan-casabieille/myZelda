@@ -16,7 +16,7 @@
 #define SPAWN_TILE_X 7
 #define SPAWN_TILE_Y 7
 
-#define MAP_FILE_PATH "assets/map.png"
+#define MAP_FILE_PATH "assets/overworld.png"
 #define PLAYER_SPRITE_PATH "assets/player.png"
 
 #define PLAYER_WIDTH 16
