@@ -14,6 +14,7 @@ typedef struct world_s
     camera_t *camera;
     player_t *player;
     sfClock* clock;
+    sfImage* collisionImage;
 } world_t;
 
 world_t *create_world(void);

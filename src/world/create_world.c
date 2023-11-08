@@ -27,6 +27,12 @@ world_t *create_world(void)
 
     sfVector2f tile_spawn_center = calculate_spawn_tile_pos();
 
+    world->collisionImage = sfImage_createFromFile(MAP_COLLISION_FILE_PATH);
+    if (!world->collisionImage) {
+        free(world);
+        return NULL;
+    }
+
     world->map = create_object(
         MAP_FILE_PATH,
         (sfVector2f){0, 0},

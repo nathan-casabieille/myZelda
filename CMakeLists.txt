@@ -63,6 +63,11 @@ set(HELPERS_SRCS
     src/helpers/vector_length.c
 )
 
+set(COLLISION_SRCS
+    src/collision/can_move_to.c
+    src/collision/move_object_if_possible.c
+)
+
 set(SRCS
     src/main.c
     ${OBJECT_SRCS}
@@ -72,6 +77,7 @@ set(SRCS
     ${PLAYER_CONTROLLER_SRCS}
     ${ROOM_SCROLL_SRCS}
     ${HELPERS_SRCS}
+    ${COLLISION_SRCS}
 )
 
 add_executable(Zelda ${SRCS})

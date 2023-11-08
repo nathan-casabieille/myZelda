@@ -1,6 +1,8 @@
 #include "player_controller.h"
+#include "collision.h"
 
-void update_player_controller(player_controller_t *controller) {
+void update_player_controller(player_controller_t *controller, sfImage *collisionImage)
+{
     sfVector2f movementOffset = {0, 0};
 
     sfBool movingInX = controller->keyLeft || controller->keyRight;
@@ -26,6 +28,6 @@ void update_player_controller(player_controller_t *controller) {
     }
 
     if (player->moving && player->can_move) {
-        move_object(player->object, movementOffset);
+        move_object_if_possible(player, movementOffset, collisionImage);
     }
 }

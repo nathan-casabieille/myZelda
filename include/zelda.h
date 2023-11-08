@@ -17,13 +17,15 @@
 #define SPAWN_TILE_Y 7
 
 #define MAP_FILE_PATH "assets/overworld.png"
+#define MAP_COLLISION_FILE_PATH "assets/overworld_collision.png"
+
 #define PLAYER_SPRITE_PATH "assets/player.png"
 
 #define PLAYER_WIDTH 16
 #define PLAYER_HEIGHT 16
 
 #define SCROLL_MARGIN 1
-#define ROOM_SCROLL_SPEED 100.0f
+#define ROOM_SCROLL_SPEED 150.0f
 #define PLAYER_BORDER_OFFSET 5
 
 #endif // __ZELDA_H__

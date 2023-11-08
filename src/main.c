@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
         handle_events(world->window, &controller);
 
-        update_player_controller(&controller);
+        update_player_controller(&controller, world->collisionImage);
 
         update_world(world, delta_time);
 
